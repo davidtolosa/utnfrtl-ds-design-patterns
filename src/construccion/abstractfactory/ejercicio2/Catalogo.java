@@ -1,4 +1,4 @@
-package construccion.abstractfactory.ejercicio1;
+package construccion.abstractfactory.ejercicio2;
 
 import java.util.Scanner;
 
@@ -6,6 +6,7 @@ public class Catalogo {
 
 	public static int nAutos = 3;
 	public static int nScooters = 2;
+	public static int nCamionetas = 4;
 
 	public static void main(String[] args) {
 
@@ -14,28 +15,21 @@ public class Catalogo {
 
 		// Defino una fabrica de vehiculo que va a instanciar con la seleccion del
 		// usuario
-		FabricaVehiculo fabrica = null;
+		FabricaVehiculo fabrica;
 
 		Automovil[] autos = new Automovil[nAutos];
 		Scooter[] scooters = new Scooter[nScooters];
+		Camioneta[] camionetas = new Camioneta[nCamionetas];
 
 		// Le pido al usuario que seleccione el tipo de vehiculos a usar
-		System.out.print("Desea utilizar vehiculos electricos (1), gasolina (2), hibridos(3):");
+		System.out.print("Desea utilizar vehiculos electricos (1) o a gasolina (2):");
 		String eleccion = reader.next();
 
 		//Segun la eleccion creo la fabrica correspondiente
-		switch (eleccion) {
-		case "1":
+		if (eleccion.equals("1")) {
 			fabrica = new FabricaVehiculoElectricidad();
-			break;
-		case "2":
+		} else {
 			fabrica = new FabricaVehiculoGasolina();
-			break;
-		case "3":
-			fabrica = new FabricaVehiculoHibrido();
-			break;
-		default:
-			break;
 		}
 		
 		//Creo algunos automoviles y scooters 
@@ -44,6 +38,10 @@ public class Catalogo {
 			
 		for (int index = 0; index < nScooters; index++)
 			scooters[index] = fabrica.crearScooter("clasico","rojo", 2+index);
+		
+		for (int index = 0; index < nCamionetas; index++)
+			camionetas[index] = fabrica.crearCamioneta("clasico","rojo", 2+index);
+			
 			
 		//Muestro los Automoviles y Scooters creados
 		for (Automovil auto: autos)
@@ -51,6 +49,10 @@ public class Catalogo {
 			
 		for (Scooter scooter: scooters)
 			scooter.mostrarCaracteristicas();
+		
+		for (Camioneta camioneta: camionetas)
+			camioneta.mostrarCaracteristicas();
+		
 	}
 
 }

@@ -1,0 +1,10 @@
+package abstracto;
+
+public abstract class Calculadora {
+
+	public int sumar(int numero1, int numero2) {
+		return numero1+numero2;
+	}
+	
+	public abstract void mostrarMarca();
+}
