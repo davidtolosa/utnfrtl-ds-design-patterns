@@ -1,4 +1,4 @@
-package construccion.builder;
+package construccion.builder.ejemplo;
 
 public class ConstructorDocumentacionVehiculoPdf extends ConstructorDocumentacionVehiculo {
 	
