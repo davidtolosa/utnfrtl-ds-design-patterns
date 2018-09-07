@@ -2,6 +2,8 @@ package construccion.builder.ejemplo;
 
 import java.util.Scanner;
 
+import construccion.builder.ejercio1.ConstructorDocumentacionVehiculoDOC;
+
 public class ClienteVehiculo {
 	
 	public static void main(String[] args) {
@@ -17,8 +19,8 @@ public class ClienteVehiculo {
 			constructor = new ConstructorDocumentacionVehiculoHtml();
 		}else {
 			constructor = new ConstructorDocumentacionVehiculoPdf();
-		}
-		
+		}	
+	
 		
 		Vendedor vendedor = new Vendedor(constructor);
 		Documentacion documentacion = vendedor.construye("David");
