@@ -16,7 +16,6 @@ public class Usuario {
 		DocumentacionCliente documentacionCliente3 = new DocumentacionCliente("David");
 		documentacionCliente1.visualiza();
 		documentacionCliente2.visualiza();
-		documentacionCliente3.imprime();
 
 	}
 
